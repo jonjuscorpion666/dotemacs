@@ -13,4 +13,4 @@ This repository has two main files:
 To set up, the basic instructions are as follows:
   1. Clone the repository somewhere: `cd <DIR> && git clone git://github.com/lancelet/dotemacs.git`
   2. Symlink the dotemacs.el file: `ln -s <DIR>/dotemacs/dotemacs.el ~/.emacs`
-  3. READ the emacs-setup.sh file and then execute it: `bash emacs-setup.sh`.
+  3. READ the emacs-setup.sh file and then execute it: `bash emacs-setup.sh`
