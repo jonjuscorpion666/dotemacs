@@ -73,6 +73,10 @@
 (color-theme-charcoal-black)
 (set-face-background 'region "#304030")
 
+; AUCTeX
+(unless (package-installed-p 'auctex)
+  (package-refresh-contents) (package-install 'auctex))
+
 ; Scala-mode 2
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
@@ -124,8 +128,11 @@
   (set-frame-size (selected-frame) 71 38) 
 )
 
-; Additions to the exec-path
+; Additions to the exec-path and PATH environment variable
 (setq exec-path (append exec-path `("/usr/local/bin")))
+(setenv "PATH" (concat "/usr/texbin" ":"
+		       "/usr/local/bin" ":"
+		       (getenv "PATH")))
 
 ; Set JAVA_HOME to use JDK 8
 (setq jdk-dir "/Library/Java/JavaVirtualMachines/jdk1.8.0_b87.jdk")
