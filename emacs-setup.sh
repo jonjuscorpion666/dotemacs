@@ -39,3 +39,14 @@ if [ ! -e "julia-mode.el" ]; then
 else
     echo "--> already installed"
 fi
+
+echo "Arduino mode"
+cd ~/.emacs.d/vendor
+if [ -d "arduino-mode" ]; then
+    echo "--> already installed; updating via git"
+    cd arduino-mode
+    git pull
+else
+    echo "--> not installed; performing a git clone"
+    git clone https://github.com/bookest/arduino-mode.git
+fi

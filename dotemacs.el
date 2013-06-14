@@ -118,6 +118,11 @@
 (load "~/.emacs.d/vendor/julia-mode.el")
 (require 'julia-mode)
 
+; Arduino mode
+(add-to-list 'load-path "~/.emacs.d/vendor/arduino-mode")
+(setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
+(autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
+
 ; Set parameters for video recording
 (defun set-for-recording ()
   "Set up for video screencast (half of 1280x720)"
