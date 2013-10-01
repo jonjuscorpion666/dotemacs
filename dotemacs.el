@@ -21,7 +21,7 @@
 ;   > wget https://raw.github.com/JuliaLang/julia/master/contrib/julia-mode.el
 
 ; Default font
-(set-default-font "-apple-Inconsolata-light-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+(set-default-font "-apple-Inconsolata-light-normal-normal-*-16-*-*-*-m-0-iso10646-1")
 
 ; Set fullscreen shortcut key to be M-RET
 (defun toggle-fullscreen ()
