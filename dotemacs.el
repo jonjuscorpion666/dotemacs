@@ -89,9 +89,9 @@
 (column-number-mode)
 
 ; Ensime
-(add-to-list 'load-path "~/.emacs.d/vendor/ensime_2.10.0-0.9.8.9/elisp/")
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;(add-to-list 'load-path "~/.emacs.d/vendor/ensime_2.10.0-0.9.8.9/elisp/")
+;(require 'ensime)
+;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ; Haskell mode
 (unless (package-installed-p 'haskell-mode)
