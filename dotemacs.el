@@ -90,7 +90,7 @@
 (unless (package-installed-p 'column-marker)
   (package-refresh-contents) (package-install 'column-marker))
 (require 'column-marker)
-(add-hook 'scala-mode-hook (lambda () (interactive) (column-marker-1 120)))
+(add-hook 'scala-mode-hook (lambda () (interactive) (column-marker-1 100)))
 (column-number-mode)
 
 ; Ensime
@@ -105,7 +105,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ; GHC-mod
-(setq exec-path (append exec-path `("/Users/jsm/.cabal/bin")))
+(setq exec-path (append exec-path `("/Users/merrijo/.cabal/bin")))
 (unless (package-installed-p 'ghc)
   (package-refresh-contents) (package-install 'ghc))
 (autoload 'ghc-init "ghc" nil t)
