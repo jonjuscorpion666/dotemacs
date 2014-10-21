@@ -33,6 +33,9 @@
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)) ))
 (global-set-key (kbd "M-RET") 'toggle-fullscreen)
 
+; No tabs
+(setq-default indent-tabs-mode nil)
+
 ; Visual customizations
 (tool-bar-mode 0)               ; turn off tool bar
 (setq inhibit-splash-screen t)  ; no splash
@@ -101,10 +104,10 @@
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
 ; Haskell mode
-; (unless (package-installed-p 'haskell-mode)
-;  (package-refresh-contents) (package-install 'haskell-mode))
-; (require 'haskell-mode)
-; (custom-set-variables '(haskell-mode-hook '(turn-on-haskell-indentation)))
+(unless (package-installed-p 'haskell-mode)
+  (package-refresh-contents) (package-install 'haskell-mode))
+(require 'haskell-mode)
+(add-hook '(haskell-mode-hook '(turn-on-haskell-indentation)))
 
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
