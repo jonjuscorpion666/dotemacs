@@ -21,7 +21,7 @@
 ;   > wget https://raw.github.com/JuliaLang/julia/master/contrib/julia-mode.el
 
 ; Default font
-(set-default-font "-apple-Inconsolata-light-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+(set-default-font "-apple-Inconsolata-light-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 ; Set fullscreen shortcut key to be M-RET
 (defun toggle-fullscreen ()
@@ -61,7 +61,7 @@
 ; Package mechanism
 (require 'package)
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa.milkbox.net/packages/") t)
+       '("melpa" . "http://melpa-stable.milkbox.net/packages/") t)
 (package-initialize)
 
 ; Color theme
@@ -93,11 +93,18 @@
 ;(require 'ensime)
 ;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+; GHC-mod
+(unless (package-installed-p 'ghc)
+  (package-refresh-contents) (package-install 'ghc))
+(autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
 ; Haskell mode
-(unless (package-installed-p 'haskell-mode)
-  (package-refresh-contents) (package-install 'haskell-mode))
-(require 'haskell-mode)
-(custom-set-variables '(haskell-mode-hook '(turn-on-haskell-indentation)))
+; (unless (package-installed-p 'haskell-mode)
+;  (package-refresh-contents) (package-install 'haskell-mode))
+; (require 'haskell-mode)
+; (custom-set-variables '(haskell-mode-hook '(turn-on-haskell-indentation)))
 
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
@@ -132,16 +139,22 @@
   (set-default-font "-apple-Inconsolata-light-normal-normal-*-18-*-*-*-m-0-iso10646-1")
   (powerline-reset)
   (scroll-bar-mode -1)
-  (set-frame-size (selected-frame) 71 38) 
+  (set-frame-size (selected-frame) 100 50) 
 )
 
 ; Additions to the exec-path and PATH environment variable
 (setq exec-path (append exec-path `("/usr/local/bin")))
+(setq exec-path (append exec-path `("/Users/merrijo/.cabal/bin")))
 (setenv "PATH" (concat "/usr/texbin" ":"
 		       "/usr/local/bin" ":"
+		       "/Users/merrijo/.cabal/bin" ":"
 		       (getenv "PATH")))
 
 ; Set JAVA_HOME to use JDK 8
 (setq jdk-dir "/Library/Java/JavaVirtualMachines/jdk1.8.0_b87.jdk")
 (setq java-home (concat jdk-dir "/Contents/Home"))
 (setenv "JAVA_HOME" java-home)
+
+; IDO
+(require 'ido)
+(ido-mode t)
