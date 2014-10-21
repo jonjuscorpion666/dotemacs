@@ -102,7 +102,7 @@
 (unless (package-installed-p 'haskell-mode)
   (package-refresh-contents) (package-install 'haskell-mode))
 (require 'haskell-mode)
-(add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ; GHC-mod
 (setq exec-path (append exec-path `("/Users/jsm/.cabal/bin")))
