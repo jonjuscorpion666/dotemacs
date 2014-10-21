@@ -1,4 +1,3 @@
-
 ;---------------------------------------;
 ; JONATHAN MERRITT'S EMACS STARTUP FILE ;
 ;---------------------------------------;
@@ -106,6 +105,7 @@
 (add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
 
 ; GHC-mod
+(setq exec-path (append exec-path `("/Users/jsm/.cabal/bin")))
 (unless (package-installed-p 'ghc)
   (package-refresh-contents) (package-install 'ghc))
 (autoload 'ghc-init "ghc" nil t)
@@ -115,9 +115,9 @@
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
 ; Suggest waiting for a time and then try re-enabling.
-(unless (package-installed-p 'sr-speedbar)
-  (package-refresh-contents) (package-install 'sr-speedbar))
-(require 'sr-speedbar)
+;(unless (package-installed-p 'sr-speedbar)
+;  (package-refresh-contents) (package-install 'sr-speedbar))
+;(require 'sr-speedbar)
 
 ; Smooth scrolling
 (unless (package-installed-p 'smooth-scrolling)
@@ -150,7 +150,6 @@
 
 ; Additions to the exec-path and PATH environment variable
 (setq exec-path (append exec-path `("/usr/local/bin")))
-(setq exec-path (append exec-path `("/Users/merrijo/.cabal/bin")))
 (setenv "PATH" (concat "/usr/texbin" ":"
 		       "/usr/local/bin" ":"
 		       "/Users/merrijo/.cabal/bin" ":"
