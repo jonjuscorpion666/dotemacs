@@ -1,3 +1,4 @@
+
 ;---------------------------------------;
 ; JONATHAN MERRITT'S EMACS STARTUP FILE ;
 ;---------------------------------------;
@@ -64,7 +65,9 @@
 ; Package mechanism
 (require 'package)
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa-stable.milkbox.net/packages/") t)
+             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+            '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 ; Color theme
@@ -112,9 +115,9 @@
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
 ; Suggest waiting for a time and then try re-enabling.
-;(unless (package-installed-p 'sr-speedbar)
-;  (package-refresh-contents) (package-install 'sr-speedbar))
-;(require 'sr-speedbar)
+(unless (package-installed-p 'sr-speedbar)
+  (package-refresh-contents) (package-install 'sr-speedbar))
+(require 'sr-speedbar)
 
 ; Smooth scrolling
 (unless (package-installed-p 'smooth-scrolling)
