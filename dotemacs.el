@@ -96,18 +96,18 @@
 ;(require 'ensime)
 ;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+; Haskell mode
+(unless (package-installed-p 'haskell-mode)
+  (package-refresh-contents) (package-install 'haskell-mode))
+(require 'haskell-mode)
+(add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
+
 ; GHC-mod
 (unless (package-installed-p 'ghc)
   (package-refresh-contents) (package-install 'ghc))
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-
-; Haskell mode
-(unless (package-installed-p 'haskell-mode)
-  (package-refresh-contents) (package-install 'haskell-mode))
-(require 'haskell-mode)
-(add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
 
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
