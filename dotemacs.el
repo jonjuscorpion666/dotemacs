@@ -107,7 +107,7 @@
 (unless (package-installed-p 'haskell-mode)
   (package-refresh-contents) (package-install 'haskell-mode))
 (require 'haskell-mode)
-(add-hook '(haskell-mode-hook '(turn-on-haskell-indentation)))
+(add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
 
 ; Sr-Speedbar
 ; Producing errors on 2014-01-27.
