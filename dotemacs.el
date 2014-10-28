@@ -23,6 +23,13 @@
 ; Default font
 (set-default-font "-apple-Inconsolata-light-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
+; Window resize
+(global-set-key (kbd "C-M-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-M-<down>") 'shrink-window)
+(global-set-key (kbd "C-M-<up>") 'enlarge-window)
+
+
 ; Set fullscreen shortcut key to be M-RET
 (defun toggle-fullscreen ()
   "Toggle full screen"
