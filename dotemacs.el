@@ -22,6 +22,7 @@
 
 ; Default font
 (set-default-font "-apple-Inconsolata-light-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+;(set-default-font "-*-PragmataPro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 ; Window resize
 (global-set-key (kbd "C-M-<left>") 'shrink-window-horizontally)
@@ -55,7 +56,7 @@
 
 ; Window size
 (if (window-system)
-    (set-frame-size (selected-frame) 120 30))
+    (set-frame-size (selected-frame) 120 75))
 
 ; Stop emacs from saving backup files
 (setq make-backup-files nil)
