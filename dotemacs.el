@@ -21,7 +21,8 @@
 ;   > wget https://raw.github.com/JuliaLang/julia/master/contrib/julia-mode.el
 
 ; Default font
-(set-default-font "-apple-Inconsolata-light-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+(set-default-font "-*-Monaco-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+;(set-default-font "-apple-Inconsolata-light-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 ;(set-default-font "-*-PragmataPro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 ; Window resize
