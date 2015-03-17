@@ -62,18 +62,18 @@
 ; Stop emacs from saving backup files
 (setq make-backup-files nil)
 
-; Emacs powerline (cute modeline / status bar graphics)
-(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
-(require 'powerline)
-(set-face-attribute 'powerline-active1 nil :box nil :foreground "LightGrey")
-(set-face-attribute 'powerline-active2 nil :box nil)
-(set-face-attribute 'mode-line nil :box nil :background "OliveDrab3" :foreground "grey14")
-(set-face-attribute 'powerline-inactive1 nil :box nil)
-(set-face-attribute 'powerline-inactive2 nil :box nil)
-(set-face-attribute 'mode-line-inactive nil :box nil)
-(set-face-attribute 'mode-line-highlight nil :box nil)
-(powerline-default-theme)
-(add-hook 'window-setup-hook 'powerline-reset)  ; get coloring of arrows correct
+;; ; Emacs powerline (cute modeline / status bar graphics)
+;; (add-to-list 'load-path "~/.emacs.d/vendor/powerline")
+;; (require 'powerline)
+;; (set-face-attribute 'powerline-active1 nil :box nil :foreground "LightGrey")
+;; (set-face-attribute 'powerline-active2 nil :box nil)
+;; (set-face-attribute 'mode-line nil :box nil :background "OliveDrab3" :foreground "grey14")
+;; (set-face-attribute 'powerline-inactive1 nil :box nil)
+;; (set-face-attribute 'powerline-inactive2 nil :box nil)
+;; (set-face-attribute 'mode-line-inactive nil :box nil)
+;; (set-face-attribute 'mode-line-highlight nil :box nil)
+;; (powerline-default-theme)
+;; (add-hook 'window-setup-hook 'powerline-reset)  ; get coloring of arrows correct
 
 ; Package mechanism
 (require 'package)
