@@ -121,7 +121,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ; GHC-mod
-(setq exec-path (append exec-path `("/Users/merrijo/.cabal/bin")))
+(setq exec-path (append exec-path `("/Users/jsm/.cabal/bin")))
 (unless (package-installed-p 'ghc)
   (package-refresh-contents) (package-install 'ghc))
 (autoload 'ghc-init "ghc" nil t)
@@ -168,7 +168,7 @@
 (setq exec-path (append exec-path `("/usr/local/bin")))
 (setenv "PATH" (concat "/usr/texbin" ":"
 		       "/usr/local/bin" ":"
-		       "/Users/merrijo/.cabal/bin" ":"
+		       "/Users/jsm/.cabal/bin" ":"
 		       (getenv "PATH")))
 
 ; Set JAVA_HOME to use JDK 8
